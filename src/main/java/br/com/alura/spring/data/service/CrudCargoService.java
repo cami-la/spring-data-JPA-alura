@@ -35,7 +35,7 @@ public class CrudCargoService {
 			case 2:
 				atualizar(scan); break;
 			case 3:
-				visualizar(scan); break;
+				visualizar(); break;
 			case 4:
 				deletar(scan); break;
 			default: system = false; break;
@@ -56,7 +56,7 @@ public class CrudCargoService {
 
 	}
 
-	private void visualizar(Scanner scan) {
+	private void visualizar() {
 		Iterator<Cargo> cargos = this.cargoRepository.findAll().iterator();
 		
 		while(cargos.hasNext()) {
