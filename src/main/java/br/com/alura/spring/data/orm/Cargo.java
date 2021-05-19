@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +15,8 @@ public class Cargo {
 	private Integer id;
 	private String descricao;
 	
+	@OneToMany
+	private Funcionario funcionarios;
 	
 	public Cargo() {
 	}
@@ -33,10 +36,6 @@ public class Cargo {
 		this.descricao = descricao;
 	}
 
-	@Override
-	public String toString() {
-		return "Cargo [id=" + id + ", descricao=" + descricao + "]";
-	}
 	
 	
 }
